@@ -3,9 +3,9 @@ import logging
 import atexit
 import sys
 
-from myapp.application import MyApp
+from schedgen.application import SchedGenApp
 
-APP_NAME = "MyApp"
+APP_NAME = "schedgen"
 APP_VERSION = 1.0
 
 # Helper function to ensure we capture stack traces via logging
@@ -38,7 +38,7 @@ def run():
     logging.info(f'{APP_NAME} {APP_VERSION} - Starting up...')
 
     # Launch into the main application run code
-    MyApp.run()
+    SchedGenApp.run()
 
 if __name__ == '__main__':
     run()

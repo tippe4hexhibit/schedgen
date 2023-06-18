@@ -2,7 +2,7 @@
 import logging
 log = logging.getLogger(__name__)
 
-class MyApp:
+class SchedGenApp:
 
     @staticmethod
     def run():
