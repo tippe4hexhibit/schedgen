@@ -1,4 +1,3 @@
-
 import logging
 import atexit
 import sys
@@ -8,16 +7,19 @@ from schedgen.application import SchedGenApp
 APP_NAME = "schedgen"
 APP_VERSION = 1.0
 
+
 # Helper function to ensure we capture stack traces via logging
 # (Note: This method does not work with threads until Python 3.8)
-def log_excepthook(excType, excValue, traceback, logger=logging.getLogger()):
-    logging.error("Logging an uncaught exception",
-                 exc_info=(excType, excValue, traceback))
+def log_excepthook(exc_type, exc_value, traceback, logger=logging.getLogger()):
+    logger.error("Logging an uncaught exception",
+                 exc_info=(exc_type, exc_value, traceback))
+
 
 # Helper function to clean up and alert that we are ending runtime
 @atexit.register
 def shutdown():
     logging.info(f"{APP_NAME} {APP_VERSION} - Shutting down...")
+
 
 # Stub code to bootstrap environment and launch into main application
 def run():
@@ -39,6 +41,7 @@ def run():
 
     # Launch into the main application run code
     SchedGenApp.run()
+
 
 if __name__ == '__main__':
     run()
