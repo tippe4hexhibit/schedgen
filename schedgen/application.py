@@ -2,9 +2,8 @@ import logging
 import os
 
 from pyairtable import Api
-from pprint import pprint
-
 from schedgen.models.schedule import FullSchedule
+from schedgen.models.yaml import YamlSchedule
 
 log = logging.getLogger(__name__)
 
@@ -20,8 +19,11 @@ class SchedGenApp:
 
         full_schedule = FullSchedule(raw_schedule)
 
-        for schedule in full_schedule.schedules:
-            log.info(full_schedule.schedules[schedule])
+        # for schedule in full_schedule.schedules:
+        #     log.info(full_schedule.schedules[schedule])
 
+        fair_schedule_yamls = YamlSchedule(full_schedule.get_schedules()['Full Schedule'])
 
-
+        for yaml_date, yaml in fair_schedule_yamls.get_yamls().items():
+            print(yaml_date)
+            print(yaml)

@@ -16,11 +16,19 @@ class FullSchedule:
         self.schedules = {
             'Full Schedule': Schedule('Full Schedule')
         }
+        from pprint import pprint
+        sorted_schedule_data = list(
+            sorted(
+                schedule_data,
+                key=lambda item: item['fields']['Event Start']
+            )
+        )
+        pprint(sorted_schedule_data)
 
-        for event in schedule_data:
+        for event in sorted_schedule_data:
             if 'fields' in event:
                 if 'Event Type' in event['fields'].keys():
-                    for event_type in event['fields']['Event Type']:
+                    for event_type in ['Full Schedule'] + event['fields']['Event Type']:
                         # Create a new schedule based on a new Event Type
                         if event_type not in self.schedules:
                             self.schedules[event_type] = Schedule(event_type)
@@ -40,6 +48,9 @@ class FullSchedule:
                         fields = {x.lower().replace(' ', '_'): y
                                   for x, y in event['fields'].items()}
 
+                        # Reload timezone adjusted ISO dates
+                        fields['event_start'] = event_start.isoformat(sep='T', timespec='auto')
+
                         # Inject in some human-readable time attributes
                         fields['event_start_date'] = event_start.date().isoformat()
                         fields['event_start_time'] = event_start.time().strftime("%-I:%M %p").lower()
@@ -51,6 +62,8 @@ class FullSchedule:
                             log.info(f'Event end date: {event_end.date()}')
                         if event_end and event_end.date() == event_start.date():
                             fields['event_end_time'] = event_end.time().strftime("%-I:%M %p").lower()
+                            # Reload timezone adjusted ISO dates
+                            fields['event_end'] = event_end.isoformat(sep='T', timespec='auto')
                         # Fix up the venue and location attributes, so they're not in a list
                         if 'venue_name' in fields and type(fields['venue_name']) == list:
                             fields['venue_name'] = fields['venue_name'][0]
@@ -59,7 +72,9 @@ class FullSchedule:
 
                         # Add the event to the relevant schedule objects
                         self.schedules[event_type].add_event(event_start.date().isoformat(), **fields)
-                        self.schedules['Full Schedule'].add_event(event_start.date().isoformat(), **fields)
+
+    def get_schedules(self):
+        return self.schedules
 
 
 class Schedule:
@@ -82,7 +97,6 @@ class Schedule:
             kwargs['event_start_time'] = "Start Time Not Set"
             event_start_time = kwargs['event_start_time']
 
-        log.info(f'{self.schedule_type} -> {event_date}: {self.event_dates[event_date].keys()}')
         if event_start_time not in self.event_dates[event_date]:
             log.info(f'Creating a dict for "{event_start_time} in "{event_date}" type {self.schedule_type}')
             self.event_dates[event_date][event_start_time] = {}
@@ -93,7 +107,6 @@ class Schedule:
             kwargs['venue_name'] = 'Venue Not Assigned'
             venue_name = kwargs['venue_name']
 
-        log.info(f'{self.schedule_type} -> {event_date} -> {event_start_time}: {self.event_dates[event_date][event_start_time].keys()}')
         if venue_name not in self.event_dates[event_date][event_start_time]:
             log.info(f'Creating a list for "{venue_name}" in "{event_start_time}" for "{event_date} type {self.schedule_type}"')
             self.event_dates[event_date][event_start_time][venue_name] = []
@@ -101,8 +114,11 @@ class Schedule:
         for key, value in kwargs.items():
             entry[key] = value
 
-        log.info(f'Appending event on {event_date} at {event_start_time} in {venue_name} type {self.schedule_type}')
-        self.event_dates[event_date][event_start_time][venue_name].append(entry)
+        log.info(f'Inserting event on {event_date} at {event_start_time} in {venue_name} type {self.schedule_type}')
+        self.event_dates[event_date][event_start_time][venue_name].insert(0, entry)
+
+    def get_events(self):
+        return self.event_dates
 
     def __str__(self):
         pretty_string = f"Schedule for {self.schedule_type}"
