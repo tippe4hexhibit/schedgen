@@ -1,6 +1,8 @@
 import logging
 
+from collections import OrderedDict
 from datetime import datetime
+
 from yaml import load, dump
 
 try:
@@ -15,8 +17,9 @@ class YamlSchedule:
     def __init__(self, event_schedule):
         self.yamls = {}
 
-        for event_date, schedule in event_schedule.get_events().items():
 
+
+        for event_date, schedule in event_schedule.get_events().items():
             yaml_struct = {
                 'longdate': datetime.fromisoformat(event_date).strftime('%A, %B %-d, %Y'),
                 'times': {}
@@ -33,14 +36,7 @@ class YamlSchedule:
 
                         yaml_struct['times'][event_start_time][venue_name].append(event['event_name'].strip())
 
-                    # yaml_struct['times'][event_start_time].append()
-                    #     yaml_struct['times'][event_start_time] = [{
-                    #         'location': venue_name,
-                    #         'events': [{'event': event['event_name']}]
-                    #     }]
-
-            # self.yamls[event_date] = dump(events, Dumper=Dumper)
-            self.yamls[event_date] = dump(yaml_struct, Dumper=Dumper)
+            self.yamls[event_date] = dump(yaml_struct, Dumper=Dumper, sort_keys=False)
 
     def get_yamls(self):
         return self.yamls
