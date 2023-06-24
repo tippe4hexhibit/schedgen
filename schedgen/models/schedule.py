@@ -7,6 +7,10 @@ from zoneinfo import ZoneInfo
 log = logging.getLogger(__name__)
 
 
+def _abbreviate_type(str_val):
+    return ''.join([x for x in str_val.lower() if x not in [*' /-_&aeiou']])
+
+
 class FullSchedule:
     def __init__(self, schedule_data):
         log.info(f'Initializing {self.__class__}')
@@ -16,14 +20,13 @@ class FullSchedule:
         self.schedules = {
             'Full Schedule': Schedule('Full Schedule')
         }
-        from pprint import pprint
+
         sorted_schedule_data = list(
             sorted(
                 schedule_data,
                 key=lambda item: item['fields']['Event Start']
             )
         )
-        pprint(sorted_schedule_data)
 
         for event in sorted_schedule_data:
             if 'fields' in event:
@@ -64,6 +67,9 @@ class FullSchedule:
                             fields['event_end_time'] = event_end.time().strftime("%-I:%M %p").lower()
                             # Reload timezone adjusted ISO dates
                             fields['event_end'] = event_end.isoformat(sep='T', timespec='auto')
+
+                            # Tack on end time to the event name (calendar formatting kludge)
+                            fields['event_name'] = f"{fields['event_name']} (until {fields['event_end_time']})"
                         # Fix up the venue and location attributes, so they're not in a list
                         if 'venue_name' in fields and type(fields['venue_name']) == list:
                             fields['venue_name'] = fields['venue_name'][0]
@@ -81,6 +87,7 @@ class Schedule:
     def __init__(self, schedule_type):
         log.info(f'Initializing {self.__class__}')
         self.schedule_type = schedule_type
+        self.schedule_abbreviation = _abbreviate_type(schedule_type)
         self.event_dates = {}
         log.info(f"Class initialized for '{self.schedule_type}'")
 
