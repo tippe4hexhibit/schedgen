@@ -34,7 +34,13 @@ class YamlSchedule:
                         if venue_name not in yaml_struct['times'][event_start_time]:
                             yaml_struct['times'][event_start_time][venue_name] = []
 
-                        yaml_struct['times'][event_start_time][venue_name].append(event['event_name'].strip())
+                        event_dict = {
+                            'event_name': event['event_name'].strip()
+                        }
+                        if 'description' in event.keys():
+                            event_dict['description'] = event['description'].strip().replace('\n', ' ')
+
+                        yaml_struct['times'][event_start_time][venue_name].append(event_dict)
 
             self.yamls[event_date] = dump(yaml_struct, Dumper=Dumper, sort_keys=False)
 
