@@ -37,8 +37,12 @@ class YamlSchedule:
                         event_dict = {
                             'event_name': event['event_name'].strip()
                         }
+
+                        # Add some attributes to the event to add context on the webpage
                         if 'description' in event.keys():
                             event_dict['description'] = event['description'].strip().replace('\n', ' ')
+                        if 'event_end_time' in event.keys():
+                            event_dict['event_end_time'] = event['event_end_time'].strip().replace('\n', ' ')
 
                         yaml_struct['times'][event_start_time][venue_name].append(event_dict)
 

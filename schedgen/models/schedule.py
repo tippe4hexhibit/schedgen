@@ -68,8 +68,6 @@ class FullSchedule:
                             # Reload timezone adjusted ISO dates
                             fields['event_end'] = event_end.isoformat(sep='T', timespec='auto')
 
-                            # Tack on end time to the event name (calendar formatting kludge)
-                            fields['event_name'] = f"{fields['event_name']} (until {fields['event_end_time']})"
                         # Fix up the venue and location attributes, so they're not in a list
                         if 'venue_name' in fields and type(fields['venue_name']) == list:
                             fields['venue_name'] = fields['venue_name'][0]
