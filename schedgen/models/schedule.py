@@ -70,9 +70,9 @@ class FullSchedule:
 
                         # Fix up the venue and location attributes, so they're not in a list
                         if 'venue_name' in fields and type(fields['venue_name']) == list:
-                            fields['venue_name'] = fields['venue_name'][0]
+                            fields['venue_name'] = ', '.join(fields['venue_name'])
                         if 'location' in fields and type(fields['location']) == list:
-                            fields['location'] = fields['location'][0]
+                            fields['location'] = ','.join(fields['location'][0])
 
                         # Add the event to the relevant schedule objects
                         self.schedules[event_type].add_event(event_start.date().isoformat(), **fields)
