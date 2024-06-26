@@ -113,13 +113,13 @@ class Schedule:
             venue_name = kwargs['venue_name']
 
         if venue_name not in self.event_dates[event_date][event_start_time]:
-            log.info(f'Creating a list for "{venue_name}" in "{event_start_time}" for "{event_date} type {self.schedule_type}"')
+            log.info(f'Creating a list for "{venue_name}" in "{event_start_time}" for "{event_date}" type "{self.schedule_type}"')
             self.event_dates[event_date][event_start_time][venue_name] = []
 
         for key, value in kwargs.items():
             entry[key] = value
 
-        log.info(f'Inserting event on {event_date} at {event_start_time} in {venue_name} type {self.schedule_type}')
+        log.info(f'Inserting event {entry["event_name"]} on {event_date} at {event_start_time} in {venue_name} type {self.schedule_type}')
         self.event_dates[event_date][event_start_time][venue_name].insert(0, entry)
 
     def get_events(self):

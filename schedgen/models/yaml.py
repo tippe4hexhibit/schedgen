@@ -26,14 +26,14 @@ class YamlSchedule:
             for event_start_time, venue in schedule.items():
                 for venue_name, events in venue.items():
                     for event in events:
-                        if event_start_time not in time_lookup:
+                        if event_start_time not in time_lookup.keys():
                             time_lookup[event_start_time] = len(yaml_struct['times'])
                             yaml_struct['times'].append({
                                 'time': event_start_time,
                                 'venues': {}
                             })
 
-                        if venue_name not in yaml_struct['times'][time_lookup[event_start_time]]:
+                        if venue_name not in yaml_struct['times'][time_lookup[event_start_time]]['venues'].keys():
                             yaml_struct['times'][time_lookup[event_start_time]]['venues'][venue_name] = []
 
                         event_dict = {
