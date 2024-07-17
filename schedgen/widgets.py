@@ -1,9 +1,12 @@
 import drawsvg as dw
 
+from pathlib import Path
+
 
 class SchedulePane:
-    def __init__(self, file_name="pane", width=554, height=768, fill=None,
-                 max_rows=12,
+    def __init__(self, output_path=Path.cwd(), file_name="pane",
+                 width=554, height=768, fill=None,
+                 max_rows=20,
                  heading_font_family='Gill Sans',
                  heading_1_text=None, heading_1_size=48, heading_1_weight='bold',
                  heading_1_color='#ffffff',
@@ -15,17 +18,19 @@ class SchedulePane:
         self._height = height
         self._name = file_name
 
-        self._HEADING_1_Y = 45
-        self._HEADING_2_Y = 100
-        self._FIRST_LINE_Y = 140
+        self._HEADING_1_Y = 25
+        self._HEADING_2_Y = 80
+        self._FIRST_LINE_Y = 120
 
         self._background = dw.Group(id='background', fill='none')
         self._textarea = dw.Group(id='textarea', fill='none')
 
         self._current_row = 0
+        self._current_y = self._FIRST_LINE_Y
         self._current_subheading = None
         self._max_rows = max_rows
 
+        self._output_path = output_path
         self._file_name = file_name
         self._current_file = 0
 
@@ -58,39 +63,40 @@ class SchedulePane:
                                     )
 
     def add_subheading(self, subheading_text,
-                       subheading_font_family='Gill Sans MT', subheading_size=28,
+                       subheading_font_family='Gill Sans MT', subheading_size=26,
                        subheading_weight='bold', subheading_color='#ffffff',
                        ):
 
-        if self._current_row >= self._max_rows - 2:
+        if self._current_row >= self._max_rows - 4:
             self._cut_page()
 
         self._current_subheading = subheading_text
-
+        self._current_y += (subheading_size + 10)
         self._textarea.append(dw.Text(subheading_text,
                                       font_family=subheading_font_family,
                                       font_weight=subheading_weight,
                                       font_size=subheading_size,
-                                      x=15, y=self._FIRST_LINE_Y + ((subheading_size + 5) * self._current_row),
+                                      x=5, y=self._current_y,
                                       fill=subheading_color,
                                       dominant_baseline='hanging',
                                       ))
         self._current_row += 1
 
-    def add_text(self, text,
-                 text_font_family='Gill Sans MT', text_font_size=24,
+    def add_text(self, text, x_offset=0,
+                 text_font_family='Gill Sans MT', text_font_size=22,
                  text_font_weight='', text_color='#ffffff',
                  ):
 
-        if self._current_row >= self._max_rows - 2:
+        if self._current_row >= self._max_rows - 2 and x_offset == 0:
             self._cut_page()
             self.add_subheading(self._current_subheading)
 
+        self._current_y += (text_font_size + 10)
         self._textarea.append(dw.Text(text,
                                       font_family=text_font_family,
                                       font_weight=text_font_weight,
                                       font_size=text_font_size,
-                                      x=15, y=self._FIRST_LINE_Y + ((text_font_size + 5) * self._current_row),
+                                      x=10 + x_offset, y=self._current_y,
                                       fill=text_color,
                                       dominant_baseline='hanging',
                                       ))
@@ -102,6 +108,7 @@ class SchedulePane:
 
         self._textarea = dw.Group(id='textarea', fill='none')
         self._current_row = 0
+        self._current_y = self._FIRST_LINE_Y
         self._current_file += 1
 
     def _get_filename(self, file_name):
@@ -111,10 +118,10 @@ class SchedulePane:
         d = dw.Drawing(self._width, self._height)
         d.append(self._background)
         d.append(self._textarea)
-        d.save_png(f'{self._get_filename(self._file_name)}.png')
+        d.save_png(str(self._output_path / f'{self._get_filename(self._file_name)}.png'))
 
     def save_svg(self):
         d = dw.Drawing(self._width, self._height)
         d.append(self._background)
         d.append(self._textarea)
-        d.save_svg(f'{self._get_filename(self._file_name)}.svg')
+        d.save_svg(str(self._output_path / f'{self._get_filename(self._file_name)}.svg'))
