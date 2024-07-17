@@ -7,6 +7,8 @@ from pyairtable import Api
 from schedgen.models.schedule import FullSchedule
 from schedgen.models.yaml import YamlSchedule
 
+from schedgen.widgets import SchedulePane
+
 log = logging.getLogger(__name__)
 
 
@@ -54,6 +56,14 @@ class SchedGenApp:
         for schedule_type, schedule in full_schedule.get_schedules().items():
             schedule_yamls = YamlSchedule(schedule)
             schedule_prefix = schedule.schedule_abbreviation + '_'
+
+            if schedule_type in ('Pre-Fair', 'Fair'):
+                for event_date, daily_schedule in schedule.get_events().items():
+                    for event_time, venue in daily_schedule.items():
+                        print(f'{event_time}')
+                        for venue_name, events in venue.items():
+                            for event in events:
+                                print(f'{event["event_name"]} - {venue_name} (until {event["event_end_time"]})')
 
             for yaml_date, yaml in schedule_yamls.get_yamls().items():
                 schedule_filename = schedule_prefix + ''.join(yaml_date.split('-')) + '.yaml'
