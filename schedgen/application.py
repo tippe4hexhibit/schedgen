@@ -1,6 +1,7 @@
 import logging
 import os
 
+from datetime import datetime
 from pathlib import Path
 
 from pyairtable import Api
@@ -10,6 +11,22 @@ from schedgen.models.yaml import YamlSchedule
 from schedgen.widgets import SchedulePane
 
 log = logging.getLogger(__name__)
+
+
+def split_string(text, max_length):
+    split_strings = []
+    words = ""
+    for word in text.split(' '):
+        if len(words) + len(word) > max_length:
+            split_strings.append(words.strip())
+            words = ""
+
+        words += f'{word} '
+
+    if len(words) > 0:
+        split_strings.append(words.strip())
+
+    return split_strings
 
 
 class SchedGenApp:
@@ -59,11 +76,27 @@ class SchedGenApp:
 
             if schedule_type in ('Pre-Fair', 'Fair'):
                 for event_date, daily_schedule in schedule.get_events().items():
+                    sp = SchedulePane(output_path=output_path,
+                                      file_name=f"Z_schedule_{''.join(event_date.split('-'))}",
+                                      fill='#004438',
+                                      heading_1_text="Today's Schedule",
+                                      heading_1_color='#daaa00',
+                                      heading_2_text=datetime.fromisoformat(event_date).strftime('%A, %B %d, %Y')
+                                      )
                     for event_time, venue in daily_schedule.items():
-                        print(f'{event_time}')
+                        sp.add_subheading(event_time)
                         for venue_name, events in venue.items():
                             for event in events:
-                                print(f'{event["event_name"]} - {venue_name} (until {event["event_end_time"]})')
+                                end_time_string = ""
+                                if 'event_end_time' in event.keys():
+                                    end_time_string = f' (until {event["event_end_time"]})'
+                                for part in split_string(event['event_name'], 45):
+                                    sp.add_text(part,
+                                                text_font_weight='bold')
+                                sp.add_text(f'{venue_name}{end_time_string}',
+                                            x_offset=15, text_font_size=18)
+                        sp.save_svg()
+                        sp.save_png()
 
             for yaml_date, yaml in schedule_yamls.get_yamls().items():
                 schedule_filename = schedule_prefix + ''.join(yaml_date.split('-')) + '.yaml'
@@ -71,4 +104,6 @@ class SchedGenApp:
                 with open(output_path / schedule_filename, 'w') as yaml_out:
                     log.info(f'Writing {schedule_type} schedule file for {yaml_date} called {schedule_filename}')
                     yaml_out.write(yaml)
+
+
 
