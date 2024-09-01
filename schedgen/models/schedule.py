@@ -1,5 +1,6 @@
 import logging
 
+from collections.abc import Mapping
 from datetime import datetime
 from datetime import timezone
 from zoneinfo import ZoneInfo
@@ -11,7 +12,7 @@ def _abbreviate_type(str_val):
     return ''.join([x for x in str_val.lower() if x not in [*' /-_&aeiou']])
 
 
-class FullSchedule:
+class FullSchedule(Mapping):
     def __init__(self, schedule_data):
         log.info(f'Initializing {self.__class__}')
 
@@ -56,7 +57,7 @@ class FullSchedule:
 
                         # Inject in some human-readable time attributes
                         fields['event_start_date'] = event_start.date().isoformat()
-                        fields['event_start_time'] = event_start.time().strftime("%-I:%M %p").lower()
+                        fields['event_start_time'] = event_start.time().strftime("%I:%M %p").lower()
 
                         # Only show ends if they exist, and if they are on the same day
                         # (works around for not wanting to broadcast a Carnival end time)
@@ -64,7 +65,7 @@ class FullSchedule:
                         if event_end:
                             log.info(f'Event end date: {event_end.date()}')
                         if event_end and event_end.date() == event_start.date():
-                            fields['event_end_time'] = event_end.time().strftime("%-I:%M %p").lower()
+                            fields['event_end_time'] = event_end.time().strftime("%I:%M %p").lower()
                             # Reload timezone adjusted ISO dates
                             fields['event_end'] = event_end.isoformat(sep='T', timespec='auto')
 
@@ -77,17 +78,47 @@ class FullSchedule:
                         # Add the event to the relevant schedule objects
                         self.schedules[event_type].add_event(event_start.date().isoformat(), **fields)
 
+    def __len__(self):
+        return len(self.schedules)
+
+    def __iter__(self):
+        return iter(self.schedules.keys())
+
+    def __getitem__(self, item):
+        return self.schedules[item]
+
+    def __hash__(self):
+        return hash(self.schedules)
+
+    def __eq__(self, other):
+        return self.schedules == other.schedules
+
     def get_schedules(self):
         return self.schedules
 
 
-class Schedule:
+class Schedule(Mapping):
     def __init__(self, schedule_type):
         log.info(f'Initializing {self.__class__}')
         self.schedule_type = schedule_type
         self.schedule_abbreviation = _abbreviate_type(schedule_type)
         self.event_dates = {}
         log.info(f"Class initialized for '{self.schedule_type}'")
+
+    def __len__(self):
+        return len(self.event_dates)
+
+    def __iter__(self):
+        return iter(self.event_dates.keys())
+
+    def __hash__(self):
+        return hash(self.event_dates)
+
+    def __eq__(self, other):
+        return self.event_dates == other.event_dates
+
+    def __getitem__(self, item):
+        return self.event_dates[item]
 
     def add_event(self, event_date, **kwargs):
 
