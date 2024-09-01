@@ -1,7 +1,7 @@
 import logging
 import os
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from pyairtable import Api
@@ -68,42 +68,48 @@ class SchedGenApp:
         # Build the object structure from the Airtable data
         full_schedule = FullSchedule(raw_schedule)
 
-        # Dump out all the YAMLs for each schedule type, by date
-        schedule_prefix = None
-        for schedule_type, schedule in full_schedule.get_schedules().items():
-            schedule_yamls = YamlSchedule(schedule)
-            schedule_prefix = schedule.schedule_abbreviation + '_'
 
-            if schedule_type in ('Pre-Fair', 'Fair'):
-                for event_date, daily_schedule in schedule.get_events().items():
-                    sp = SchedulePane(output_path=output_path,
-                                      file_name=f"Z_schedule_{''.join(event_date.split('-'))}",
-                                      fill='#004438',
-                                      heading_1_text="Today's Schedule",
-                                      heading_1_color='#daaa00',
-                                      heading_2_text=datetime.fromisoformat(event_date).strftime('%A, %B %d, %Y')
-                                      )
-                    for event_time, venue in daily_schedule.items():
-                        sp.add_subheading(event_time)
-                        for venue_name, events in venue.items():
-                            for event in events:
-                                end_time_string = ""
-                                if 'event_end_time' in event.keys():
-                                    end_time_string = f' (until {event["event_end_time"]})'
-                                for part in split_string(event['event_name'], 45):
-                                    sp.add_text(part,
-                                                text_font_weight='bold')
-                                sp.add_text(f'{venue_name}{end_time_string}',
-                                            x_offset=15, text_font_size=18)
-                        sp.save_svg()
-                        sp.save_png()
+        if (datetime.strptime(max(full_schedule['Full Schedule'].keys()), '%Y-%m-%d') >
+                datetime.combine(datetime.now() + timedelta(days=1), datetime.min.time())):
 
-            for yaml_date, yaml in schedule_yamls.get_yamls().items():
-                schedule_filename = schedule_prefix + ''.join(yaml_date.split('-')) + '.yaml'
+            # Dump out all the YAMLs for each schedule type, by date
+            schedule_prefix = None
+            for schedule_type, schedule in full_schedule.get_schedules().items():
+                schedule_yamls = YamlSchedule(schedule)
+                schedule_prefix = schedule.schedule_abbreviation + '_'
 
-                with open(output_path / schedule_filename, 'w') as yaml_out:
-                    log.info(f'Writing {schedule_type} schedule file for {yaml_date} called {schedule_filename}')
-                    yaml_out.write(yaml)
+                if schedule_type in ('Pre-Fair', 'Fair'):
+                    for event_date, daily_schedule in schedule.get_events().items():
+                        sp = SchedulePane(output_path=output_path,
+                                          file_name=f"Z_schedule_{''.join(event_date.split('-'))}",
+                                          fill='#004438',
+                                          heading_1_text="Today's Schedule",
+                                          heading_1_color='#daaa00',
+                                          heading_2_text=datetime.fromisoformat(event_date).strftime('%A, %B %d, %Y')
+                                          )
+                        for event_time, venue in daily_schedule.items():
+                            sp.add_subheading(event_time)
+                            for venue_name, events in venue.items():
+                                for event in events:
+                                    end_time_string = ""
+                                    if 'event_end_time' in event.keys():
+                                        end_time_string = f' (until {event["event_end_time"]})'
+                                    for part in split_string(event['event_name'], 45):
+                                        sp.add_text(part,
+                                                    text_font_weight='bold')
+                                    sp.add_text(f'{venue_name}{end_time_string}',
+                                                x_offset=15, text_font_size=18)
+                            sp.save_svg()
+                            sp.save_png()
+
+                for yaml_date, yaml in schedule_yamls.get_yamls().items():
+                    schedule_filename = schedule_prefix + ''.join(yaml_date.split('-')) + '.yaml'
+
+                    with open(output_path / schedule_filename, 'w') as yaml_out:
+                        log.info(f'Writing {schedule_type} schedule file for {yaml_date} called {schedule_filename}')
+                        yaml_out.write(yaml)
+        else:
+            log.info('All event dates have passed. No data files will be generated.')
 
 
 
