@@ -64,6 +64,9 @@ class SchedGenApp:
             exit(254)
 
         if not img_output_path.exists():
+            os.mkdir(img_output_path)
+
+        if not img_output_path.exists():
             log.error(f"IMG_OUTPUT_DIR ({os.environ['IMG_OUTPUT_DIR']}) does not exist.")
             exit(254)
 
