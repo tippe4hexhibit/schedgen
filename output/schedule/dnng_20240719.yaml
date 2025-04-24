@@ -1,0 +1,20 @@
+longdate: Friday, July 19, 2024
+times:
+- time: 06:00 am
+  venues:
+    Commercial Kitchen Window (Dining Court):
+    - event_name: BT Humbles Serving Breakfast
+      event_end_time: 10:30 am
+- time: 11:00 am
+  venues:
+    Commercial Kitchen Window (Dining Court):
+    - event_name: BT Humbles Serving Lunch
+      event_end_time: 02:00 pm
+    Dining Court, Pop Stand:
+    - event_name: Food Court Vendors Open
+      event_end_time: 09:00 pm
+- time: 04:30 pm
+  venues:
+    Commercial Kitchen Window (Dining Court):
+    - event_name: BT Humbles Serving Dinner
+      event_end_time: 08:30 pm

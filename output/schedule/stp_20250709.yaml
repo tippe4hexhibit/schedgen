@@ -1,0 +1,12 @@
+longdate: Wednesday, July 09, 2025
+times:
+- time: 08:00 am
+  venues:
+    Coliseum:
+    - event_name: Midwest Deliveries
+      description: Stage, crowd control, etc.
+      event_end_time: 11:30 am
+- time: 06:00 pm
+  venues:
+    Coliseum:
+    - event_name: Director Meeting

@@ -1,0 +1,13 @@
+longdate: Thursday, July 25, 2024
+times:
+- time: 04:00 pm
+  venues:
+    East Field:
+    - event_name: Luehrs' Ideal Rides Carnival
+      description: '"Two for Thursday"  2 people ride for the price of one!'
+      event_end_time: 10:00 pm
+- time: 05:30 pm
+  venues:
+    Shuttle Pickup/Dropoff Location:
+    - event_name: Shuttle Service
+      event_end_time: 10:30 pm

@@ -1,0 +1,12 @@
+longdate: Sunday, July 20, 2025
+times:
+- time: 09:00 am
+  venues:
+    Horse & Pony Arena:
+    - event_name: Horse & Pony - 1st Year Member Clinic
+      event_end_time: 05:00 pm
+- time: 06:00 pm
+  venues:
+    Horse & Pony Arena:
+    - event_name: Horse & Pony - Contesting
+      event_end_time: 08:30 pm

@@ -1,0 +1,13 @@
+longdate: Friday, July 11, 2025
+times:
+- time: 11:55 am
+  venues:
+    Cattle Barn:
+    - event_name: Beef Barn - Mulch Delivery
+      event_end_time: 11:56 am
+- time: 05:30 pm
+  venues:
+    Coliseum:
+    - event_name: Little Miss. & Mr. Practice
+      description: Practice workshop for their contest
+      event_end_time: 08:00 pm

@@ -1,0 +1,20 @@
+longdate: Friday, July 26, 2024
+times:
+- time: 10:00 am
+  venues:
+    North Wing, East Wing 1:
+    - event_name: 4-H Exhibit Hall
+      event_end_time: 03:00 pm
+    East Wing 1:
+    - event_name: Home & Family Arts Display
+      event_end_time: 03:00 pm
+- time: 11:00 am
+  venues:
+    Dining Court, Pop Stand:
+    - event_name: Food Court Vendors Open
+      event_end_time: 05:00 pm
+- time: 05:00 pm
+  venues:
+    East Field:
+    - event_name: Luehrs' Ideal Rides Carnival
+      event_end_time: 10:00 pm

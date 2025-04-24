@@ -1,0 +1,23 @@
+longdate: Saturday, July 20, 2024
+times:
+- time: 08:00 am
+  venues:
+    East Wing 1:
+    - event_name: Home & Family Arts Food Check in
+      event_end_time: 10:00 am
+- time: 10:00 am
+  venues:
+    East Wing 1:
+    - event_name: Home & Family Arts Display
+      event_end_time: 09:00 pm
+    - event_name: Home & Family Arts Foods Judging
+      description: Auction to take place at conclusion of Judging
+- time: 10:30 am
+  venues:
+    East Wing 1:
+    - event_name: Home & Family Arts- Flowers Check in
+      event_end_time: 01:30 am
+- time: 02:00 pm
+  venues:
+    East Wing 1:
+    - event_name: Home & Family Arts Flowers Judging

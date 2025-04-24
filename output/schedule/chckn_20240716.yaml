@@ -1,0 +1,73 @@
+longdate: Tuesday, July 16, 2024
+times:
+- time: 07:30 am
+  venues:
+    Coliseum:
+    - event_name: Shooting Sports - Check-in - All Grades
+      event_end_time: 09:00 am
+- time: 08:00 am
+  venues:
+    West Wing:
+    - event_name: Sewing - Check-in Grades 8-12
+      event_end_time: 09:00 am
+    - event_name: Jr. Fashion Revue - Check-in - Grade 3
+      event_end_time: 08:10 am
+    Small Conference Room:
+    - event_name: Genealogy - Check-in - All Grades
+      event_end_time: 09:00 am
+    Gallery:
+    - event_name: Consumer Clothing - Check-in - All Grades notebooks
+      event_end_time: 09:00 am
+- time: 09:00 am
+  venues:
+    West Wing:
+    - event_name: Jr. Fashion Revue - Check-in - Grade 4
+      event_end_time: 09:10 am
+- time: 09:30 am
+  venues:
+    West Wing:
+    - event_name: Jr. Fashion Revue - Check-in - Grade 5
+      event_end_time: 09:45 am
+    Coliseum:
+    - event_name: Garden - Check-in - All Grades
+      event_end_time: 11:00 am
+- time: 10:00 am
+  venues:
+    North Wing:
+    - event_name: Floriculture - Check-in - All Grades
+      event_end_time: 11:00 am
+- time: 10:15 am
+  venues:
+    West Wing:
+    - event_name: Jr. Fashion Revue - Check-in - Grade 6
+      event_end_time: 10:30 am
+- time: 10:45 am
+  venues:
+    West Wing:
+    - event_name: Jr. Fashion Revue - Check-in - Grade 7
+      event_end_time: 11:00 am
+- time: 12:00 pm
+  venues:
+    West Wing:
+    - event_name: Sewing - Check-in Grades 3-7
+      event_end_time: 12:30 pm
+- time: 12:30 pm
+  venues:
+    West Wing:
+    - event_name: Sr. Fashion Revue - Check-in ALL Senior Categories
+      event_end_time: 12:45 pm
+- time: 06:00 pm
+  venues:
+    Coliseum:
+    - event_name: Mini 4-H Check In and Judging - Kindergarten
+      event_end_time: 06:40 pm
+- time: 06:40 pm
+  venues:
+    Coliseum:
+    - event_name: Mini 4-H Check In and Judging - 1st Grade
+      event_end_time: 07:20 pm
+- time: 07:20 pm
+  venues:
+    Coliseum:
+    - event_name: Mini 4-H Check In and Judging - 2nd Grade
+      event_end_time: 08:00 pm

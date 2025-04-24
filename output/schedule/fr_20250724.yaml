@@ -1,0 +1,32 @@
+longdate: Thursday, July 24, 2025
+times:
+- time: 10:00 am
+  venues:
+    Coliseum:
+    - event_name: Mini 4-H Livestock Show
+      event_end_time: 01:00 pm
+- time: 02:30 pm
+  venues:
+    Coliseum:
+    - event_name: Robotics Event
+      event_end_time: 05:00 pm
+- time: 05:30 pm
+  venues:
+    Coliseum:
+    - event_name: Pie Eating Contest
+      event_end_time: 06:00 pm
+- time: 06:30 pm
+  venues:
+    Coliseum:
+    - event_name: Supreme Showmanship Contest
+      event_end_time: 07:45 pm
+- time: 07:30 pm
+  venues:
+    Coliseum:
+    - event_name: Animal Calling Contest
+      event_end_time: 08:00 pm
+- time: 08:00 pm
+  venues:
+    Coliseum:
+    - event_name: Greased Watermelon Contest
+      event_end_time: 09:30 pm

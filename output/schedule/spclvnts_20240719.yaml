@@ -1,0 +1,12 @@
+longdate: Friday, July 19, 2024
+times:
+- time: 04:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Kids Hair Tinseling and Face Tattooing
+      event_end_time: 08:00 pm
+- time: 06:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Euchre Tournament
+      event_end_time: 08:00 pm

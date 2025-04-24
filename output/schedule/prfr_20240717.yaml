@@ -1,0 +1,51 @@
+longdate: Wednesday, July 17, 2024
+times:
+- time: 08:00 am
+  venues:
+    Coliseum:
+    - event_name: Foods - Check-in Baked Foods Grades 3-6
+      event_end_time: 09:00 am
+- time: 08:30 am
+  venues:
+    East Wing 2:
+    - event_name: Cake Decorating - Check-in - All Grades
+      event_end_time: 09:30 am
+- time: 09:00 am
+  venues:
+    Coliseum:
+    - event_name: Pocket Pets, Reptiles & Vivariums - Check-in - All Grades
+      event_end_time: 10:00 am
+    - event_name: Foods - Project Judging Baked Foods Grades 3-6
+      event_end_time: 12:00 pm
+- time: 09:30 am
+  venues:
+    East Wing 2:
+    - event_name: Cake Decorating - Project Judging - All Grades
+      event_end_time: 05:00 pm
+- time: 10:00 am
+  venues:
+    Coliseum:
+    - event_name: Pocket Pets, Reptiles & Vivariums - Project Judging - All Grades
+      event_end_time: 05:00 pm
+- time: 10:30 am
+  venues:
+    North Wing:
+    - event_name: Aquatic Science - Check-in - All Grades
+      event_end_time: 11:00 am
+- time: 11:00 am
+  venues:
+    North Wing:
+    - event_name: Aquatic Science - Project Judging - All Grades
+      event_end_time: 05:00 pm
+- time: 12:00 pm
+  venues:
+    Coliseum:
+    - event_name: 'Foods - Check-in - Baked Foods: Grades 7-12; Preserved Foods: All
+        Grades'
+      event_end_time: 12:30 pm
+- time: 12:30 pm
+  venues:
+    Coliseum:
+    - event_name: 'Foods - Project Judging - Baked Foods: Grades 7-12; Preserved Foods:
+        All Grades'
+      event_end_time: 05:00 pm

@@ -1,0 +1,11 @@
+longdate: Saturday, July 20, 2024
+times:
+- time: 06:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Minute to Win It Games
+      event_end_time: 07:30 pm
+- time: 07:30 pm
+  venues:
+    Special Events Tent:
+    - event_name: Cake Walk

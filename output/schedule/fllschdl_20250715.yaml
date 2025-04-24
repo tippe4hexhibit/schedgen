@@ -1,0 +1,20 @@
+longdate: Tuesday, July 15, 2025
+times:
+- time: 05:00 pm
+  venues:
+    West Wing:
+    - event_name: Swine Committee Setup
+      event_end_time: 07:30 pm
+- time: 06:00 pm
+  venues:
+    West Wing:
+    - event_name: Swine Set up
+      event_end_time: 07:00 pm
+    Coliseum:
+    - event_name: Queen Contest Practice
+      event_end_time: 08:30 pm
+- time: 07:00 pm
+  venues:
+    West Wing:
+    - event_name: Swine Member meeting
+      event_end_time: 08:00 pm

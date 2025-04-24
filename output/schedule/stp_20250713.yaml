@@ -1,0 +1,19 @@
+longdate: Sunday, July 13, 2025
+times:
+- time: 01:00 pm
+  venues:
+    West Pavilion:
+    - event_name: Sheep Setup and Meeting
+      description: Member meetings also
+      event_end_time: 03:00 pm
+- time: 02:00 pm
+  venues:
+    West Pavilion:
+    - event_name: Goat Setup
+      description: Member meetings also
+      event_end_time: 04:00 pm
+- time: 05:00 pm
+  venues:
+    West Pavilion:
+    - event_name: Goat Meeting
+      description: Member meetings also

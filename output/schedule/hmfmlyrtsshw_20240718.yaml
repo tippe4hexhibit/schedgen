@@ -1,0 +1,12 @@
+longdate: Thursday, July 18, 2024
+times:
+- time: 08:00 am
+  venues:
+    East Wing 1:
+    - event_name: Home & Family Arts Check in
+      event_end_time: 10:00 am
+- time: 10:30 am
+  venues:
+    East Wing 1:
+    - event_name: Home & Family Arts Judging
+      description: Judging is closed to the public

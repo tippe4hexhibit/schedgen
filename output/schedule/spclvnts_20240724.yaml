@@ -1,0 +1,15 @@
+longdate: Wednesday, July 24, 2024
+times:
+- time: 05:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Old Country Music
+      event_end_time: 06:30 pm
+- time: 06:30 pm
+  venues:
+    Fairgrounds:
+    - event_name: Antique Tractor Parade
+      event_end_time: 07:00 pm
+    Special Events Tent:
+    - event_name: Clogging
+      event_end_time: 07:30 am

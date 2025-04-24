@@ -1,0 +1,13 @@
+longdate: Tuesday, July 23, 2024
+times:
+- time: 12:00 pm
+  venues:
+    East Field:
+    - event_name: Luehrs' Ideal Rides Carnival
+      description: '"Family Bargain Day" All rides take one ticket'
+      event_end_time: 10:00 pm
+- time: 01:00 pm
+  venues:
+    Shuttle Pickup/Dropoff Location:
+    - event_name: Shuttle Service
+      event_end_time: 10:30 pm

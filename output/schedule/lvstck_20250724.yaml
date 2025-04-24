@@ -1,0 +1,27 @@
+longdate: Thursday, July 24, 2025
+times:
+- time: 05:00 am
+  venues:
+    West Pavilion:
+    - event_name: Livestock Check out (except Rabbits & Poultry)
+- time: 10:00 am
+  venues:
+    Coliseum:
+    - event_name: Mini 4-H Livestock Show
+      event_end_time: 01:00 pm
+- time: 03:00 pm
+  venues:
+    Rabbit & Poultry Barn:
+    - event_name: Rabbit Checkout
+      event_end_time: 05:00 pm
+- time: 06:30 pm
+  venues:
+    Coliseum:
+    - event_name: Supreme Showmanship Contest
+      event_end_time: 07:45 pm
+- time: 09:30 pm
+  venues:
+    West Pavilion:
+    - event_name: Livestock Check out (except Rabbits)
+      description: 9:30 or the conclusion of the greased watermelon contest.
+      event_end_time: 11:30 pm

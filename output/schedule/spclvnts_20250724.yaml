@@ -1,0 +1,17 @@
+longdate: Thursday, July 24, 2025
+times:
+- time: 02:30 pm
+  venues:
+    Coliseum:
+    - event_name: Robotics Event
+      event_end_time: 05:00 pm
+- time: 05:30 pm
+  venues:
+    Coliseum:
+    - event_name: Pie Eating Contest
+      event_end_time: 06:00 pm
+- time: 07:30 pm
+  venues:
+    Coliseum:
+    - event_name: Animal Calling Contest
+      event_end_time: 08:00 pm

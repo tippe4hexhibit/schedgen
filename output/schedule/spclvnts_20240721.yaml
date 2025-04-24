@@ -1,0 +1,22 @@
+longdate: Sunday, July 21, 2024
+times:
+- time: 10:00 am
+  venues:
+    Special Events Tent:
+    - event_name: Worship Service by Crestview Community Church
+      event_end_time: 11:00 am
+- time: 01:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Kiddy Tractor Pull
+      event_end_time: 03:00 pm
+- time: 06:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Finish the Lyrics
+      event_end_time: 08:00 pm
+- time: 06:30 pm
+  venues:
+    Fairgrounds:
+    - event_name: Antique Tractor Parade
+      event_end_time: 07:00 pm

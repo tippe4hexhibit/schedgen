@@ -1,0 +1,48 @@
+longdate: Friday, July 19, 2024
+times:
+- time: 06:00 am
+  venues:
+    Commercial Kitchen Window (Dining Court):
+    - event_name: BT Humbles Serving Breakfast
+      event_end_time: 10:30 am
+- time: 10:00 am
+  venues:
+    North Wing, East Wing 1:
+    - event_name: 4-H Exhibit Hall
+      event_end_time: 09:00 pm
+    East Wing 1:
+    - event_name: Home & Family Arts Display
+      event_end_time: 09:00 pm
+- time: 11:00 am
+  venues:
+    Commercial Kitchen Window (Dining Court):
+    - event_name: BT Humbles Serving Lunch
+      event_end_time: 02:00 pm
+    Dining Court, Pop Stand:
+    - event_name: Food Court Vendors Open
+      event_end_time: 09:00 pm
+- time: 12:00 pm
+  venues:
+    East Wing 2, Gallery, Dining Court:
+    - event_name: Commercial Booths
+      event_end_time: 09:00 pm
+- time: 01:00 pm
+  venues:
+    Fairgrounds, Special Events Tent:
+    - event_name: 4-H Education Station
+      event_end_time: 03:00 pm
+- time: 04:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Kids Hair Tinseling and Face Tattooing
+      event_end_time: 08:00 pm
+- time: 04:30 pm
+  venues:
+    Commercial Kitchen Window (Dining Court):
+    - event_name: BT Humbles Serving Dinner
+      event_end_time: 08:30 pm
+- time: 06:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Euchre Tournament
+      event_end_time: 08:00 pm

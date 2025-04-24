@@ -1,0 +1,32 @@
+longdate: Tuesday, July 23, 2024
+times:
+- time: 01:30 pm
+  venues:
+    Special Events Tent:
+    - event_name: Story Time with Tippecanoe County Public Library
+      event_end_time: 03:00 pm
+- time: 03:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Games for Kids
+      event_end_time: 04:45 pm
+- time: 05:30 pm
+  venues:
+    Special Events Tent:
+    - event_name: Pretty Baby Contest
+      event_end_time: 07:00 pm
+- time: 06:00 pm
+  venues:
+    Coliseum:
+    - event_name: Little Farmer Pet & Hobby Parade
+      event_end_time: 07:00 pm
+- time: 06:30 pm
+  venues:
+    Fairgrounds:
+    - event_name: Antique Tractor Parade
+      event_end_time: 07:00 pm
+- time: 07:30 pm
+  venues:
+    Special Events Tent:
+    - event_name: Youth Worship Service by Crestview Community Church
+      event_end_time: 08:30 pm

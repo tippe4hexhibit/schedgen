@@ -1,0 +1,14 @@
+longdate: Saturday, July 12, 2025
+times:
+- time: 09:00 am
+  venues:
+    East Wing 1:
+    - event_name: Consumer Meats - Project Judging - All Grades
+    West Pavilion:
+    - event_name: Dogs - Check-in - All Grades
+      event_end_time: 09:30 am
+- time: 05:00 pm
+  venues:
+    Coliseum:
+    - event_name: Little Miss. & Mister Contest
+      event_end_time: 07:00 pm

@@ -1,0 +1,58 @@
+longdate: Friday, July 18, 2025
+times:
+- time: 06:00 am
+  venues:
+    Cattle Barn:
+    - event_name: Beef Animal Check in
+      event_end_time: 08:00 am
+- time: 08:00 am
+  venues:
+    Dairy Cow Barn:
+    - event_name: Dairy Cattle Check in
+      event_end_time: 10:00 am
+- time: 08:30 am
+  venues:
+    Rabbit & Poultry Barn:
+    - event_name: Rabbit Show
+      event_end_time: 03:30 pm
+- time: 10:00 am
+  venues:
+    Coliseum:
+    - event_name: Cat Show
+      event_end_time: 02:30 pm
+    Cattle Barn:
+    - event_name: Beef Animal Check in
+      event_end_time: 02:00 pm
+- time: 12:00 pm
+  venues:
+    Rabbit & Poultry Barn:
+    - event_name: Mini 4-H Rabbit Showmanship
+      event_end_time: 01:00 pm
+- time: 01:30 pm
+  venues:
+    Coliseum:
+    - event_name: Dog Rally - Judging - All Grades
+      event_end_time: 02:30 pm
+- time: 03:00 pm
+  venues:
+    Horse & Pony Barn:
+    - event_name: Horse & Pony - Animal Check in
+      event_end_time: 07:00 pm
+- time: 05:00 pm
+  venues:
+    West Pavilion:
+    - event_name: Sheep Animal Check in
+      event_end_time: 07:00 pm
+- time: 07:00 pm
+  venues:
+    Coliseum:
+    - event_name: Member Awards Ceremony
+      event_end_time: 08:00 pm
+- time: 08:00 pm
+  venues:
+    West Wing:
+    - event_name: Swine Animal Check in
+      event_end_time: 10:00 pm
+    Coliseum:
+    - event_name: Queen Pageant
+      event_end_time: 10:00 pm

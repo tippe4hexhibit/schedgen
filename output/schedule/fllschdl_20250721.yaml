@@ -1,0 +1,27 @@
+longdate: Monday, July 21, 2025
+times:
+- time: 08:00 am
+  venues:
+    Coliseum:
+    - event_name: Dairy Cattle Show
+      event_end_time: 01:30 pm
+- time: 09:00 am
+  venues:
+    Horse & Pony Arena:
+    - event_name: Horse & Pony - Ranch Show
+      event_end_time: 05:00 pm
+- time: 02:00 pm
+  venues:
+    Coliseum:
+    - event_name: Llama Show
+      event_end_time: 06:30 pm
+- time: 06:00 pm
+  venues:
+    Horse & Pony Arena:
+    - event_name: Horse & Pony - Contesting
+      event_end_time: 08:30 pm
+- time: 07:30 pm
+  venues:
+    Coliseum:
+    - event_name: Fashion Revue
+      event_end_time: 09:00 pm

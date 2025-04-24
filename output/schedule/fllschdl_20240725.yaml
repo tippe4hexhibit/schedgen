@@ -1,0 +1,58 @@
+longdate: Thursday, July 25, 2024
+times:
+- time: 06:00 am
+  venues:
+    Dining Court:
+    - event_name: BT Humbles Serving Breakfast
+      event_end_time: 10:30 am
+- time: 10:00 am
+  venues:
+    Pop Stand:
+    - event_name: 4-H Alumni Registration
+      event_end_time: 06:00 pm
+    North Wing, East Wing 1:
+    - event_name: 4-H Exhibit Hall
+      event_end_time: 09:00 pm
+    East Wing 2, Gallery, Dining Court:
+    - event_name: Commercial Booths
+    East Wing 1:
+    - event_name: Home & Family Arts Display
+      event_end_time: 09:00 pm
+- time: 11:00 am
+  venues:
+    Dining Court, Pop Stand:
+    - event_name: Food Court Vendors Open
+      event_end_time: 09:00 pm
+    Commercial Kitchen Window (Dining Court):
+    - event_name: Everbowl Serving Lunch
+      event_end_time: 02:00 pm
+- time: 03:00 pm
+  venues:
+    Fairgrounds, Special Events Tent:
+    - event_name: 4-H Education Station
+      event_end_time: 05:00 pm
+- time: 04:00 pm
+  venues:
+    East Field:
+    - event_name: Luehrs' Ideal Rides Carnival
+      description: '"Two for Thursday"  2 people ride for the price of one!'
+      event_end_time: 10:00 pm
+- time: 04:30 pm
+  venues:
+    Commercial Kitchen Window (Dining Court):
+    - event_name: The End Zone Serving Dinner
+      event_end_time: 08:30 pm
+- time: 05:30 pm
+  venues:
+    Shuttle Pickup/Dropoff Location:
+    - event_name: Shuttle Service
+      event_end_time: 10:30 pm
+- time: 06:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Tippecanotes Barber Shop Quartet
+      event_end_time: 07:00 pm
+- time: 07:00 pm
+  venues:
+    Special Events Tent:
+    - event_name: Square Dancing

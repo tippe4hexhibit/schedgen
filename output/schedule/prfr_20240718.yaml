@@ -1,0 +1,12 @@
+longdate: Thursday, July 18, 2024
+times:
+- time: 12:30 pm
+  venues:
+    Large Conference Room:
+    - event_name: Verbal Communications - Check-in - All Grades
+      event_end_time: 01:00 pm
+- time: 01:00 pm
+  venues:
+    Large Conference Room:
+    - event_name: Verbal Communications - Project Judging - All Grades
+      event_end_time: 05:00 pm

@@ -1,0 +1,7 @@
+longdate: Monday, July 14, 2025
+times:
+- time: 06:00 pm
+  venues:
+    Cattle Barn:
+    - event_name: Beef Setup and Meeting
+      event_end_time: 08:00 pm

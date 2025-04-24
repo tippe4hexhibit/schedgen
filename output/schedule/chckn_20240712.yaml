@@ -1,0 +1,42 @@
+longdate: Friday, July 12, 2024
+times:
+- time: 07:30 am
+  venues:
+    Coliseum:
+    - event_name: Electric - Check-in - All Grades
+      event_end_time: 09:00 am
+    North Wing:
+    - event_name: Legos - Check-in Grades 7-12
+      event_end_time: 08:00 am
+    - event_name: Farm Scenes - Check-in Grades 3-4
+      event_end_time: 08:00 am
+    East Wing 2:
+    - event_name: Woodworking - Check-in - All Grades
+      event_end_time: 09:00 am
+- time: 08:00 am
+  venues:
+    North Wing:
+    - event_name: Legos - Check-in Grades 5-6
+      event_end_time: 08:30 am
+    - event_name: Farm Scenes - Check-in Grades 5-6
+      event_end_time: 08:30 am
+- time: 08:30 am
+  venues:
+    North Wing:
+    - event_name: Legos - Check-in Grades 3-4
+      event_end_time: 09:00 am
+    - event_name: Farm Scenes - Check-in Grades 7-12
+      event_end_time: 09:00 am
+- time: 09:00 am
+  venues:
+    Coliseum:
+    - event_name: Bees & Entomology - Check-in - All Grades
+      event_end_time: 10:00 am
+    Gallery:
+    - event_name: Child Development - Check-in - All Grades
+      event_end_time: 10:00 am
+- time: 12:00 pm
+  venues:
+    East Wing 2:
+    - event_name: Home Environment - Check-in - All Grades
+      event_end_time: 01:00 pm

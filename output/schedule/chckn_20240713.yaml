@@ -1,0 +1,53 @@
+longdate: Saturday, July 13, 2024
+times:
+- time: 07:30 am
+  venues:
+    North Wing:
+    - event_name: Models, Pottery, Misc. Craft, Greenware Ceramic, Painting & Drawing
+        - Check-in Grades 7-12
+      event_end_time: 08:00 am
+    West Wing:
+    - event_name: Baskets, Counted Cross Stitch, Misc. Needlecraft - Check-in Grades
+        7-12
+      event_end_time: 08:00 am
+- time: 08:00 am
+  venues:
+    North Wing:
+    - event_name: Models, Pottery, Misc. Craft, Greenware Ceramic, Painting & Drawing
+        - Check-in Grades 5-6
+      event_end_time: 08:30 am
+    Dining Court:
+    - event_name: Aerospace - Check-in Grades 6-8
+      event_end_time: 08:30 am
+    West Wing:
+    - event_name: Gift Wrapping & Scrapbooking - Check-in - All Grades
+      event_end_time: 08:30 am
+    - event_name: Baskets, Counted Cross Stitch, Misc. Needlecraft - Check-in Grades
+        5-6
+      event_end_time: 08:30 am
+- time: 08:30 am
+  venues:
+    Shelter House:
+    - event_name: Ag Tractor - Check-in - All Grades
+      event_end_time: 09:00 am
+    West Wing:
+    - event_name: Baskets, Counted Cross Stitch, Misc. Needlecraft - Check-in Grades
+        3-4
+      event_end_time: 09:00 am
+    North Wing:
+    - event_name: Models, Pottery, Misc. Craft, Greenware Ceramic, Painting & Drawing
+        - Check-in Grades 3-4
+      event_end_time: 09:00 am
+- time: 09:00 am
+  venues:
+    Dining Court:
+    - event_name: Aerospace - Check-in Grades 9-12
+      event_end_time: 09:30 am
+- time: 10:00 am
+  venues:
+    Buck Creek United Methodist Church:
+    - event_name: Consumer Meats - Check-in - All Grades
+      event_end_time: 11:30 am
+    Dining Court:
+    - event_name: Aerospace - Check-in Grades 3-5
+      event_end_time: 10:30 am

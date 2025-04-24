@@ -1,0 +1,17 @@
+longdate: Wednesday, July 23, 2025
+times:
+- time: 07:00 am
+  venues:
+    Coliseum:
+    - event_name: Swine Show
+      event_end_time: 07:30 pm
+- time: 09:00 am
+  venues:
+    Horse & Pony Arena:
+    - event_name: Horse & Pony - Western Show
+      event_end_time: 05:00 pm
+- time: 08:00 pm
+  venues:
+    Coliseum:
+    - event_name: Swine Night Show
+      event_end_time: 09:30 pm
