@@ -513,5 +513,6 @@ Temporary Items
 !.gitignore
 !.gitsubmodules
 
-output/
+# Added by seliger
 .env
+output/
