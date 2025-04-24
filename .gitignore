@@ -512,3 +512,7 @@ Temporary Items
 # add your custom gitignore here:
 !.gitignore
 !.gitsubmodules
+
+# Added by seliger
+.env
+output/
