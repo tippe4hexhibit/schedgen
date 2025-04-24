@@ -4,7 +4,8 @@ from pathlib import Path
 
 
 class SchedulePane:
-    def __init__(self, output_path=Path.cwd(), file_name="pane",
+    def __init__(self, output_path=Path.cwd(),
+                 file_name="pane",
                  width=554, height=768, fill=None,
                  max_rows=20,
                  heading_font_family='Gill Sans',
