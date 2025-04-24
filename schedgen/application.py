@@ -38,7 +38,8 @@ class SchedGenApp:
             'AIRTABLE_API_KEY',
             'AIRTABLE_BASE',
             'AIRTABLE_TABLE',
-            'OUTPUT_DIR'
+            'OUTPUT_DIR',
+            'IMG_OUTPUT_DIR'
         ]
 
         check_env_vars = [x in os.environ for x in required_env_vars]
@@ -55,10 +56,17 @@ class SchedGenApp:
                     log.info(f'{env_var} is {os.environ[env_var]}')
 
         output_path = Path(os.environ['OUTPUT_DIR'])
+        img_output_path = Path(os.environ['IMG_OUTPUT_DIR'])
+
 
         if not output_path.exists():
             log.error(f"OUTPUT_DIR ({os.environ['OUTPUT_DIR']}) does not exist.")
             exit(254)
+
+        if not img_output_path.exists():
+            log.error(f"IMG_OUTPUT_DIR ({os.environ['IMG_OUTPUT_DIR']}) does not exist.")
+            exit(254)
+
 
         api = Api(os.environ['AIRTABLE_API_KEY'])
 
@@ -80,7 +88,7 @@ class SchedGenApp:
 
                 if schedule_type in ('Pre-Fair', 'Fair'):
                     for event_date, daily_schedule in schedule.get_events().items():
-                        sp = SchedulePane(output_path=output_path,
+                        sp = SchedulePane(output_path=img_output_path,
                                           file_name=f"Z_schedule_{''.join(event_date.split('-'))}",
                                           fill='#004438',
                                           heading_1_text="Today's Schedule",
