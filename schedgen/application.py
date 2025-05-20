@@ -75,7 +75,7 @@ class SchedGenApp:
                 if schedule_type in ('Pre-Fair', 'Fair'):
                     for event_date, daily_schedule in schedule.get_events().items():
                         sp = SchedulePane(output_path=img_output_path,
-                                          file_name=f"Z_schedule_{''.join(event_date.split('-'))}",
+                                          file_name=f"Z_{schedule_type.lower()}_{''.join(event_date.split('-'))}",
                                           fill='#004438',
                                           heading_1_text="Today's Schedule",
                                           heading_1_color='#daaa00',
@@ -99,8 +99,8 @@ class SchedGenApp:
                                         "font_size": 18
                                     })
 
-                            sp.save_svg()
-                            sp.save_png()
+                        sp.save_svg()
+                        sp.save_png()
 
                 for yaml_date, yaml in schedule_yamls.get_yamls().items():
                     schedule_filename = schedule_prefix + ''.join(yaml_date.split('-')) + '.yaml'
