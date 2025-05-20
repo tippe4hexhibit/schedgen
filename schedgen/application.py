@@ -13,22 +13,6 @@ from schedgen.widgets import SchedulePane
 log = logging.getLogger(__name__)
 
 
-def split_string(text, max_length):
-    split_strings = []
-    words = ""
-    for word in text.split(' '):
-        if len(words) + len(word) > max_length:
-            split_strings.append(words.strip())
-            words = ""
-
-        words += f'{word} '
-
-    if len(words) > 0:
-        split_strings.append(words.strip())
-
-    return split_strings
-
-
 class SchedGenApp:
 
     @staticmethod
@@ -104,11 +88,17 @@ class SchedGenApp:
                                     end_time_string = ""
                                     if 'event_end_time' in event.keys():
                                         end_time_string = f' (until {event["event_end_time"]})'
-                                    for part in split_string(event['event_name'], 45):
-                                        sp.add_text(part,
-                                                    text_font_weight='bold')
-                                    sp.add_text(f'{venue_name}{end_time_string}',
-                                                x_offset=15, text_font_size=18)
+
+                                    sp.add_block({
+                                        "text": event['event_name'],
+                                        "max_line_length": 50,
+                                    }, {
+                                        "text": f"{venue_name} {end_time_string}",
+                                        "x_offset": 10,
+                                        "max_line_length": 60,
+                                        "font_size": 18
+                                    })
+
                             sp.save_svg()
                             sp.save_png()
 
