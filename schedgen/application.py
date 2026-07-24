@@ -62,9 +62,10 @@ class SchedGenApp:
         # Build the object structure from the Airtable data
         full_schedule = FullSchedule(raw_schedule)
 
-
-        if (datetime.strptime(max(full_schedule['Full Schedule'].keys()), '%Y-%m-%d') <
-                datetime.combine(datetime.now() + timedelta(days=1), datetime.min.time())):
+        log.info(f"{datetime.combine(datetime.now() + timedelta(days=1), datetime.min.time())} <= {datetime.strptime(max(full_schedule['Full Schedule'].keys()), '%Y-%m-%d')}")
+        
+        if (datetime.combine(datetime.now() + timedelta(days=1), datetime.min.time()) <=
+                datetime.strptime(max(full_schedule['Full Schedule'].keys()), '%Y-%m-%d')):
 
             # Dump out all the YAMLs for each schedule type, by date
             schedule_prefix = None
