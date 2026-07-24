@@ -63,7 +63,7 @@ class SchedGenApp:
         full_schedule = FullSchedule(raw_schedule)
 
 
-        if (datetime.strptime(max(full_schedule['Full Schedule'].keys()), '%Y-%m-%d') >
+        if (datetime.strptime(max(full_schedule['Full Schedule'].keys()), '%Y-%m-%d') <
                 datetime.combine(datetime.now() + timedelta(days=1), datetime.min.time())):
 
             # Dump out all the YAMLs for each schedule type, by date
